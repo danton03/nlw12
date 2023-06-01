@@ -1,6 +1,6 @@
-import { User } from "lucide-react";
-import Image from "next/image";
-import nlwLogo from "../assets/nlw-spacetime-logo.svg";
+import { Copyright } from "@/components/Copyright";
+import { Hero } from "@/components/Hero";
+import { SignIn } from "@/components/SignIn";
 
 export default function Home() {
   return (
@@ -16,52 +16,9 @@ export default function Home() {
         {/* Stripes */}
         <div className="absolute bottom-0 right-2 top-0 w-2 bg-stripes" />
 
-        {/* Sign In */}
-        <a
-          href={`https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_IDNEXT_PUBLIC_GITHUB_ID}`}
-          className="flex items-center gap-3 text-left transition-colors hover:text-gray-50"
-        >
-          <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gray-400">
-            <User className="h-5 w-5 text-gray-500" />
-          </div>
-          <p className="max-w-[140px] text-sm leading-snug">
-            <span className="underline">Crie a sua conta</span> e salve suas
-            memórias!
-          </p>
-        </a>
-
-        {/* Hero */}
-        <div className="space-y-5">
-          <Image src={nlwLogo} alt="NLW Spacetime" />
-          <div className="max-w-[420px] space-y-1">
-            <h1 className="text-5xl font-bold leading-tight text-gray-50">
-              Sua cápsula do tempo
-            </h1>
-            <p className="text-lg leading-relaxed">
-              Colecione momentos marcantes da sua jornada e compartilhe (se
-              quiser) com o mundo!
-            </p>
-            <a
-              href="#"
-              className="font-alt inline-block rounded-full bg-green-500 px-5 py-3 text-sm uppercase leading-none text-black hover:bg-green-600"
-            >
-              CADASTRAR LEMBRANÇA
-            </a>
-          </div>
-        </div>
-
-        {/* Copyright */}
-        <div className="text-small leading-relaxed text-gray-200">
-          Feito com 💜 no NLW da{" "}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-gray-100"
-            href="https://rocketseat.com.br"
-          >
-            Rocketseat
-          </a>
-        </div>
+        <SignIn />
+        <Hero />
+        <Copyright />
       </div>
 
       {/* Seção da Direita */}
